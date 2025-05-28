@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заметки</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Мои заметки</h1>
+            <div id="offline-status" class="offline-status hidden">Офлайн-режим</div>
+        </header>
+
+        <div class="note-form">
+            <textarea id="note-input" placeholder="Введите текст заметки..."></textarea>
+            <button id="add-note">Добавить</button>
+        </div>
+
+        <div id="notes-list" class="notes-list">
+            <!-- Заметки будут добавляться здесь динамически -->
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(registration => console.log('ServiceWorker registered'))
+                .catch(err => console.log('ServiceWorker registration failed:', err));
+        }
+    </script>
+</body>
+</html> 

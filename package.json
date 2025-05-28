@@ -1,0 +1,13 @@
+{
+  "name": "notes-pwa",
+  "version": "1.0.0",
+  "description": "PWA приложение для заметок",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve .",
+    "dev": "serve ."
+  },
+  "dependencies": {
+    "serve": "^14.2.1"
+  }
+} 
